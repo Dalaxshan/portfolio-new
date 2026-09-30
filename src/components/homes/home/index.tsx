@@ -12,6 +12,8 @@ import AwardAreaHomeOne from "./AwardAreaHomeOne";
 import TestimonialAreaHomeOne from "./TestimonialAreaHomeOne";
 import PriceAreaHomeOne from "./PriceAreaHomeOne";
 import FooterOne from "@/layouts/footers/FooterOne";
+import ProjectAreaHomeThree from "../home-3/ProjectAreaHomeThree";
+import TestimonialAreaHomeTwo from "../home-2/TestimonialAreaHomeTwo";
 
 
 const HomeOne = () => {
@@ -26,13 +28,14 @@ const HomeOne = () => {
         <div id="smooth-content">
           <main>
             <HeroAreaHome />
-            <BrandAreaHomeOne />
+            {/* <BrandAreaHomeOne /> */}
             <ServiceAreaHomeOne />
             <MarqueeAreaHomeOne />
             <AboutAreaHomeOne />
-            <PortfolioAreaHomeOne />
-            <SkillAreaHomeOne />
+             <TestimonialAreaHomeTwo />
             <AwardAreaHomeOne style_2={false} />
+            {/* <PortfolioAreaHomeOne /> */}
+            <SkillAreaHomeOne />
             <TestimonialAreaHomeOne />
             <PriceAreaHomeOne />
           </main>

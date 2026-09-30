@@ -177,18 +177,25 @@ const TestimonialAreaHomeTwo = () => {
                           hoverTextRefs[index].current = element;
                         }}
                         onMouseMove={(e) => moveText(e, index)}>
-                        <Link href="/portfolio-details" className="tp-portfolio-item-2 include-bg"
+                        <Link href={item.site_url} className="tp-portfolio-item-2 include-bg"
                           style={{
                             backgroundImage: `url(${item.brand_img.src})`,
-                          }}>
+                          }}
+                        target='blank'
+                        >
                           <div className="tp-portfolio-meta-2">
                             <span>{item.brand_tag}</span>
-                            <span>{item.time}</span>
+                            <span>{item.brand_tag2}</span>
+                            <span>{item.brand_tag3}</span>
+                            
                           </div>
                           <h3 className="tp-portfolio-title-2">{item.brand_name}</h3>
+                         
                           <div className="tp-portfolio-view tp-portfolio-view-btn">
-                            <span>View <br /> Work</span>
+                            <span>View <br /> Website</span>
                           </div>
+                          
+                          
                         </Link>
                       </div>
                     ))}

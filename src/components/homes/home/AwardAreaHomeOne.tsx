@@ -11,7 +11,7 @@ import UseHoverReveal from '@/hooks/UseHoverReveal';
 
 interface DataType {
   subtitle: string;
-  title: React.JSX.Element;
+  title: string;
   award_data: {
     id: number;
     img: string;
@@ -23,12 +23,12 @@ interface DataType {
 
 const award_content: DataType = {
   subtitle: "Award",
-  title: <>Awards & <br /> recognitions</>,
+  title: "Certificates",
   award_data: [
     {
       id: 1,
       img: "/assets/img/award/award-5.jpg",
-      company: "Awwwards SOTD",
+      company: "Awards SOTD",
       date: "FOR DISPLAY 2023",
     },
     {

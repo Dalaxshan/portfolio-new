@@ -143,28 +143,28 @@ const PersonalInfo = () => {
 
                     <div className="tp-services-capsule-item-wrapper">
                       <p data-tp-throwable-el="">
-                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Frontend</span>
+                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Next js</span>
                       </p>
                       <p data-tp-throwable-el="">
-                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Phototyping</span>
+                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Nest js</span>
                       </p>
                       <p data-tp-throwable-el="">
-                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Design solutions</span>
+                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>React js</span>
                       </p>
                       <p data-tp-throwable-el="">
-                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Consulting</span>
+                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Python</span>
                       </p>
                       <p data-tp-throwable-el="">
-                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Brand strategy</span>
+                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>AWS</span>
                       </p>
                       <p data-tp-throwable-el="">
-                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Consulting</span>
+                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Hostinger</span>
                       </p>
                       <p data-tp-throwable-el="">
-                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Brand strategy</span>
+                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>MongoDB</span>
                       </p>
                       <p data-tp-throwable-el="">
-                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>UI/UX Design</span>
+                        <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>MySQL</span>
                       </p>
                       <p data-tp-throwable-el="">
                         <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Design Audit</span>

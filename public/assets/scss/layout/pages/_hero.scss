@@ -16,19 +16,19 @@
 }
 .tp-hero{
     &-left-wrapper{
-        padding-top: 255px;
-        padding-bottom: 180px;
+        padding-top: 150px;
+        padding-bottom: 120px;
         margin-right: -110px;
         @media #{$lg}{
-            padding-top: 220px;
+            padding-top: 160px;
         }
         @media #{$md}{
-            padding-top: 170px;
-            padding-bottom: 40px;
+            padding-top: 130px;
+            padding-bottom: 30px;
         }
         @media #{$xs}{
-            padding-top: 150px;
-            padding-bottom: 70px;
+            padding-top: 110px;
+            padding-bottom: 50px;
         }
     }
     &-content{
@@ -114,8 +114,8 @@
             }
 
             &-1{
-                left: -7%;
-                top: 23%;
+                left: 10%;
+                top: 10%;
                 @media #{$md}{
                     left: 10%;
                 }
@@ -125,10 +125,10 @@
             }
             &-2{
                 right: -8%;
-                top: 28%;
+                top: 12%;
                 @media #{$md}{
                     right: 1%;
-                    top: -8%;
+                    top: 10%;
                 }
             }
 

@@ -125,8 +125,8 @@ const PortfolioArea = () => {
       <div className="porfolio-inner__thumb-wrapper tp-portfolio-effect portfolio-list-scroll-text-animation p-relative fix  black-bg-3 pt-80 pb-50"
         data-scrub="0.0001">
         <div className="portfolio-list-scroll-text pb-80 d-flex align-items-center">
-          <p>Latest Project</p>
-          <p>Latest Project</p>
+          <p>Latestdsds Project</p>
+          <p>Latesdsdst Project</p>
         </div>
         <div className="container">
           <div className="row grid gx-90">

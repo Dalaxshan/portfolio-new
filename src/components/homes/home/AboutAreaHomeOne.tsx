@@ -21,23 +21,31 @@ type DataType = {
 
 const about_content: DataType = {
   subtitle: "About Me",
-  award_title: "Independent Of The Year",
-  award_des: "Annual Awards 2020 • awwwards.com",
-  about_des: <>Hello! I'm <span>Diego</span> a self-taught & award-winning <span>Digital Designer & Developer</span> with over <span>fifteen  years of work experience</span>. I started in my children's room and got pro at renowned digital<span> nexum AG</span> agencies.</>,
-  counter_data: [
+  award_title: "Bsc (Hons) Information Technology",
+  award_des: "Srilanka Institute of Information Technology• 2025",
+about_des: (
+  <>
+    Hello! I'm <span>Dalaxshan</span>, a passionate{" "}
+    <span>Full-Stack Developer & Lecturer</span> focused on building modern,
+    scalable, and user-friendly web applications. With{" "}
+    <span>3+ years of professional experience</span>, I work across frontend,
+    backend, cloud, and DevOps technologies while also sharing my knowledge
+    through teaching and mentoring.
+  </>
+),  counter_data: [
     {
       id: 1,
-      count: 180,
+      count: 20,
       text: "Project Delivered",
     },
     {
       id: 2,
-      count: 13,
+      count: 3,
       text: "Years of Experience",
     },
     {
       id: 3,
-      count: 40,
+      count: 15 ,
       text: "Happy Clients",
     }
   ],
@@ -63,7 +71,11 @@ const AboutAreaHomeOne = () => {
                     <div className="tp-about-thumb p-relative z-index-1">
                       <div className="tp-about-thumb-bg-shape include-bg"
                         style={{ backgroundImage: 'url(/assets/img/about/shape/about-shape-1.png)' }}></div>
-                      <Image src={about_img} alt="image" />
+                      <Image
+                        src={about_img}
+                        alt="image"
+                        style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                      />
                     </div>
                   </div>
                 </div>

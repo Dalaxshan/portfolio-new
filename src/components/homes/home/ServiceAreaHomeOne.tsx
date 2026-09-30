@@ -1,10 +1,9 @@
-'use client';
-import React, { useState } from 'react';
-import Image from 'next/image';
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
 
 import shape_1 from "@/assets/img/services/shape/services-shape-1.png";
 import shape_2 from "@/assets/img/services/shape/services-shape-2.png";
-
 
 interface DataType {
   subtitle: string;
@@ -21,72 +20,90 @@ interface DataType {
 
 const service_content: DataType = {
   subtitle: "Services",
-  title: <>Solution <br /> we provide.</>,
-  sm_des: <>The combination of my passion for design, code & <br /> interaction web design world.</>,
+  title: (
+    <>
+      What I Can <br /> Do for you.
+    </>
+  ),
+  sm_des: (
+    <>
+      I create modern, scalable, and user-focused digital solutions that, turn
+      ideas into impactful web applications and experiences.
+    </>
+  ),
   accordion_data: [
     {
       id: 1,
       tab_id: "One",
-      question: "UI/UX Design",
-      answer: "Project systematization is something I place a lot of emphasis on. My passion Design Systems.",
+      question: "Frontend Development",
+      answer:
+        "I build modern, responsive, and interactive user interfaces with a strong focus on performance, usability, and clean design.",
       some_features: [
-        "Interface design",
-        "Creating design systems",
-        "Ui kits",
-      ]
+        "React.js / Next.js",
+        "Svelte /  Wordpress",
+        "HTML / CSS / Tailwind CSS",
+        "MUI / Ant Design",
+      ],
     },
     {
       id: 2,
       tab_id: "Two",
-      question: "Design Systems",
-      answer: "Project systematization is something I place a lot of emphasis on. My passion Design Systems.",
+      question: "Backend Development",
+      answer:
+        "I develop secure and scalable backend systems, APIs, and database solutions that power reliable web applications.",
       some_features: [
-        "Interface design",
-        "Creating design systems",
-        "Ui kits",
-      ]
+        "Node.js / NestJS",
+        "Java / Spring Boot",
+        "Python / Flask",
+        "MongoDB / MySQL",
+      ],
     },
     {
       id: 3,
       tab_id: "Three",
-      question: "Website Design",
-      answer: "Project systematization is something I place a lot of emphasis on. My passion Design Systems.",
+      question: "Cloud & DevOps",
+      answer:
+        "I deploy and maintain web applications using modern cloud platforms, deployment tools, and server technologies.",
       some_features: [
-        "Interface design",
-        "Creating design systems",
-        "Ui kits",
-      ]
+        "AWS",
+        "Cloudflare / Hostinger",
+        "Vercel / Render",
+        "Nginx / CI/CD",
+      ],
     },
     {
       id: 4,
       tab_id: "Four",
-      question: "Branding",
-      answer: "Project systematization is something I place a lot of emphasis on. My passion Design Systems.",
+      question: "Teaching & Mentoring",
+      answer:
+        "As a Lecturer, I share practical web development knowledge and guide students through hands-on projects and modern development practices.",
       some_features: [
-        "Interface design",
-        "Creating design systems",
-        "Ui kits",
-      ]
-    }
-  ]
-}
+        "WordPress Development",
+        "HTML / CSS / JavaScript",
+        "Elementor / WooCommerce",
+        "Practical Project Guidance",
+      ],
+    },
+  ],
+};
 
 const { subtitle, title, sm_des, accordion_data } = service_content;
-
 
 const ServiceAreaHomeOne = () => {
   const [active, setActive] = useState(1);
 
   const handleItemClick = (index: number) => {
     setActive(index);
-  }
+  };
 
   return (
     <>
-      <section className="tp-services-area tp-sv tp-services-bg-text-animation fix" id="tp-sv">
+      <section
+        className="tp-services-area tp-sv tp-services-bg-text-animation fix"
+        id="tp-sv"
+      >
         <div className="container container-large">
           <div className="tp-services-inner pb-195 p-relative z-index-1">
-
             <span className="tp-services-inner-border tp-vertical-line transition-3"></span>
             <span className="tp-services-inner-border right tp-vertical-line transition-3"></span>
 
@@ -94,78 +111,160 @@ const ServiceAreaHomeOne = () => {
               <p>Services</p>
             </div>
             <div className="row gx-0">
-
               <div className="col-xl-6 col-lg-7">
-                <div className="tp-services-wrapper tp-services-capsule-wrapper p-relative pt-100 pr-70" style={{ paddingTop: "100px", }}
-                  data-tp-throwable-scene="true">
+                <div
+                  className="tp-services-wrapper tp-services-capsule-wrapper p-relative pt-100 pr-30"
+                  style={{ paddingTop: "100px" }}
+                  data-tp-throwable-scene="true"
+                >
                   <div className="tp-section-title-wrapper tp_text_anim mb-170">
                     <div className="tp-section-title-inner p-relative">
                       <span className="tp-section-subtitle">{subtitle}</span>
-                      <h3 className="tp-section-title tp_title_anim">{title}</h3>
+                      <h3 className="tp-section-title tp_title_anim">
+                        {title}
+                      </h3>
                     </div>
                     <p>{sm_des}</p>
                   </div>
 
                   <div className="tp-services-capsule-item-wrapper">
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Frontend</span>
+                      <span
+                        className="tp-services-capsule-item"
+                        style={{ backgroundColor: "#00CC97" }}
+                      >
+                        Next js
+                      </span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Phototyping</span>
+                      <span
+                        className="tp-services-capsule-item"
+                        style={{ backgroundColor: "#FF759C" }}
+                      >
+                        Nest js
+                      </span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Design solutions</span>
+                      <span
+                        className="tp-services-capsule-item"
+                        style={{ backgroundColor: "#FFDB59", color: "#121212" }}
+                      >
+                        React js
+                      </span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Consulting</span>
+                      <span
+                        className="tp-services-capsule-item"
+                        style={{ backgroundColor: "#FFDB59", color: "#121212" }}
+                      >
+                        Python
+                      </span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Brand strategy</span>
+                      <span
+                        className="tp-services-capsule-item"
+                        style={{ backgroundColor: "#00CC97" }}
+                      >
+                        AWS
+                      </span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Consulting</span>
+                      <span
+                        className="tp-services-capsule-item"
+                        style={{ backgroundColor: "#FFDB59", color: "#121212" }}
+                      >
+                        Hostinger
+                      </span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#00CC97" }}>Brand strategy</span>
+                      <span
+                        className="tp-services-capsule-item"
+                        style={{ backgroundColor: "#00CC97" }}
+                      >
+                        MongoDB
+                      </span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#19B3F1" }}>UI/UX Design</span>
+                      <span
+                        className="tp-services-capsule-item"
+                        style={{ backgroundColor: "#19B3F1" }}
+                      >
+                        MySQL
+                      </span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FF759C" }}>Design Audit</span>
+                      <span
+                        className="tp-services-capsule-item"
+                        style={{ backgroundColor: "#FF759C" }}
+                      >
+                        PostgreSQL
+                      </span>
                     </p>
                     <p data-tp-throwable-el="">
-                      <span className="tp-services-capsule-item" style={{ backgroundColor: "#FFDB59", color: "#121212" }}>Testing</span>
+                      <span
+                        className="tp-services-capsule-item"
+                        style={{ backgroundColor: "#FFDB59", color: "#121212" }}
+                      >
+                       Prisma
+                      </span>
                     </p>
                     <p data-tp-throwable-el="">
                       <span className="">
                         <Image src={shape_1} alt="brand-img" />
                       </span>
                     </p>
-                    <p data-tp-throwable-el="">
-                      <span className="">
-                        <Image src={shape_2} alt="brand-img" />
+                     <p data-tp-throwable-el="">
+                      <span
+                        className="tp-services-capsule-item"
+                        style={{ backgroundColor: "#FF759C" }}
+                      >
+                        Tailwind CSS
+                      </span>
+                    </p>
+                      <p data-tp-throwable-el="">
+                      <span
+                        className="tp-services-capsule-item"
+                        style={{ backgroundColor: "#19B3F1" }}
+                      >
+                        Wordpress
+                      </span>
+                    </p>
+
+                      <p data-tp-throwable-el="">
+                      <span
+                        className="tp-services-capsule-item"
+                        style={{ backgroundColor: "#19B3F1" }}
+                      >
+                        Cpanel
                       </span>
                     </p>
                   </div>
-
                 </div>
               </div>
 
               <div className="col-xl-6 col-lg-5">
-                <div className="tp-services-accordion tp-accordion tp-accordion-2 pl-70 p-relative" style={{ marginTop: "90px" }}>
+                <div
+                  className="tp-services-accordion tp-accordion tp-accordion-2 pl-70 p-relative"
+                  style={{ marginTop: "90px" }}
+                >
                   <span className="tp-services-accordion-border"></span>
                   <div className="accordion" id="accordionExample">
-
                     {accordion_data.map((item, i) => (
-                      <div key={i} onClick={() => handleItemClick(i)} className={`accordion-item tp-services-accordion-item ${active === i ? 'active' : ''}`}>
-                        <h2 className="accordion-header" id={`heading${item.tab_id}`}>
+                      <div
+                        key={i}
+                        onClick={() => handleItemClick(i)}
+                        className={`accordion-item tp-services-accordion-item ${active === i ? "active" : ""}`}
+                      >
+                        <h2
+                          className="accordion-header"
+                          id={`heading${item.tab_id}`}
+                        >
                           <button
-                            className={`accordion-button ${i === 1 ? '' : 'collapsed'}`}
+                            className={`accordion-button ${i === 1 ? "" : "collapsed"}`}
                             type="button"
                             data-bs-toggle="collapse"
                             data-bs-target={`#collapse${item.tab_id}`}
-                            aria-expanded={`${i === 1 ? 'true' : 'false'}`}
+                            aria-expanded={`${i === 1 ? "true" : "false"}`}
                             aria-controls={`collapse${item.tab_id}`}
                             tabIndex={0}
                           >
@@ -175,7 +274,7 @@ const ServiceAreaHomeOne = () => {
                         </h2>
                         <div
                           id={`collapse${item.tab_id}`}
-                          className={`accordion-collapse collapse ${i === 1 ? 'show' : ''}`}
+                          className={`accordion-collapse collapse ${i === 0 ? "show" : ""}`}
                           aria-labelledby={`heading${item.tab_id}`}
                           data-bs-parent="#accordionExample"
                         >
@@ -191,11 +290,9 @@ const ServiceAreaHomeOne = () => {
                         <span className="accordion-item-border"></span>
                       </div>
                     ))}
-
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>

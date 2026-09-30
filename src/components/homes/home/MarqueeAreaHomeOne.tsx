@@ -7,12 +7,13 @@ import smile from '@/assets/img/marquee/smile.svg';
 import stroke from '@/assets/img/marquee/stroke.svg';
 
 const marquee_data = [
-  { text: 'Selected Work (2023)', img: smile },
-  { text: 'Diego Template', img: stroke },
-  { text: 'Selected Work (2023)', img: smile },
-  { text: 'Diego Template', img: stroke },
-  { text: 'Selected Work (2023)', img: smile },
-  { text: 'Diego Template', img: stroke },
+
+  { text: 'Graduated from SLIIT with a BSc (Hons) in Information Technology (2025)', img: smile },
+  { text: 'Joined The Web Sushi as a Intern Software Engineer (2023)', img: stroke },
+  { text: 'Promoted by Software Engineer at The Web Sushi (2024)', img: stroke },
+  { text: 'Started as a Lecturer at SkyUp Campus (2025)', img: smile },
+  { text: 'Working at Agroventure as a Senior Software Engineer (2026)', img: smile },
+  { text: 'Working at NeonLabz as a Team Lead (2026)', img: stroke },
 ]
 
 const setting = {
