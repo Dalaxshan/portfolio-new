@@ -21,15 +21,6 @@ const schema = yup
   })
   .required();
 
-
-const budget_categorys = [
-  { id: "10_20k", title: "10-20k", },
-  { id: "30_40k", title: "30-40k", },
-  { id: "40_50k", title: "40-50k", },
-  { id: "50_100k", title: "50-100k", },
-  { id: "greater_than_100k", title: "> 100k", },
-]
-
 const ContactForm = () => {
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [isFocused2, setIsFocused2] = useState<boolean>(false);
@@ -132,27 +123,7 @@ const ContactForm = () => {
               </div>
             </div>
           </div>
-          <div className="row">
-            <div className="col-xl-12">
-              <div className="contact-inner__category mb-45">
-                <h4 className="contact-inner__category-title">Project budget (USD)</h4>
-                <div className="contact-inner__category-wrapper">
-
-                  {budget_categorys.map((item, index) => (
-                    <label key={index} htmlFor={item.id}
-                      onClick={() => handleItemClick(index)}
-                      className={`contact-budget-btn ${activeCategory === index ? 'active' : ''}`}
-                    >{item.title}</label>
-                  ))}
-
-                  {budget_categorys.map((item, index) => (
-                    <input key={index} type="radio" name="contact_budget" id={item.id} />
-                  ))}
-
-                </div>
-              </div>
-            </div>
-          </div>
+      
           <div className="row">
             <div className="col-xxl-12">
               <div className="postbox__comment-btn">

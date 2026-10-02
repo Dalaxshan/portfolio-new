@@ -236,7 +236,7 @@
         }
         &-wrapper{
             position: absolute;
-            bottom: 50px;
+            bottom: 100px;
             right: 40px;
             z-index: 99;
         }
@@ -528,13 +528,13 @@
             }
         }
         &-5{
-            padding-top: 200px;
+            padding-top: 140px;
             padding-bottom: 80px;
             @media #{$xl}{
-                padding-top: 150px;
+                padding-top: 110px;
             }
             @media #{$lg,$md,$xs}{
-                padding-top: 110px;
+                padding-top: 80px;
             }
         }
         &-6{
@@ -1220,7 +1220,7 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 400px;
+                width: 00px;
                 height: 300px;
                 opacity: 0;
                 margin: -150px 0 0 -150px;

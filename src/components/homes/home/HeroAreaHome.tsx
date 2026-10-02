@@ -22,10 +22,10 @@ interface DataType {
 }
 
 const hero_content: DataType = {
-  slide_text: ["Fullstack Developer", "Lecturer", "Freelancer"],
+  slide_text: ["Software Engineer", "Lecturer", "Freelancer"],
   sub_title: "Hello There!",
   title_1: "I am Dalaxshan",
-  words: ["Fullstack Developer", "Lecturer", "Freelancer"],
+  words: ["Software Engineer", "Lecturer", "Freelancer"],
   // title_2: "designer",
   sm_info: (
     <>
@@ -113,7 +113,7 @@ const HeroAreaHome = () => {
                   </span>
                   <h3 className="tp-hero-title cd-headline clip tp_title_anim">
                     {title_1} <br />
-                    <span className="cd-words-wrapper">
+                    <span className="cd-words-wrapper pb-15">
                       {words.map((word, index) => (
                         <b
                           key={index}

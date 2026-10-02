@@ -84,10 +84,11 @@
                 position: absolute;
                 top: 0;
                 left: 0;
-                width: 210px;
-                height: 295px;
+                width: 330px;
+                height: 220px;
                 opacity: 0;
                 margin: -150px 0 0 -150px;
+                border: 0.1px solid grey;
                 overflow: hidden;
                 pointer-events: none;
                 @include background();

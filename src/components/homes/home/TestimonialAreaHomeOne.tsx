@@ -1,18 +1,16 @@
-'use client'
-import React, { useEffect, useRef, useState } from 'react';
-import Image, { StaticImageData } from 'next/image';
-import Slider from 'react-slick';
+"use client";
+import React, { useEffect, useRef, useState } from "react";
+import Image, { StaticImageData } from "next/image";
+import Slider from "react-slick";
 import quote from "@/assets/img/testimonial/quote.svg";
 
 import user_avatar_1 from "@/assets/img/users/user-1.jpg";
 import user_avatar_2 from "@/assets/img/users/avata-1.png";
 import user_avatar_3 from "@/assets/img/users/avata-2.png";
 import user_avatar_4 from "@/assets/img/users/avata-3.png";
- 
-import StartIcon from '@/svg/icons/StartIcon';
-import { gsap } from 'gsap';
 
-
+import StartIcon from "@/svg/icons/StartIcon";
+import { gsap } from "gsap";
 
 interface DataType {
   subtitle: string;
@@ -31,7 +29,6 @@ interface DataType {
     company: string;
   }[];
 }
-
 
 const testimonial_content: DataType = {
   subtitle: "Testimonials",
@@ -58,7 +55,7 @@ const testimonial_content: DataType = {
       rating_text: "5.0 Rating",
       description: `"Will 4 gave our website and brand whole new life while staying true to who we are. We would never have thought of going in the direction he pitched but we couldn't be happier."`,
     },
-    // update 
+    // update
     {
       id: 1,
       rating_text: "5.0 Rating",
@@ -137,13 +134,12 @@ const testimonial_content: DataType = {
       name: "Flores Albert",
       designation: "Founder & CEO at",
       company: "Dribbble",
-    }
+    },
+  ],
+};
 
-  ]
-}
-
-const { subtitle, title, info, testimonial_slider_data, testimonial_nav_data } = testimonial_content
-
+const { subtitle, title, info, testimonial_slider_data, testimonial_nav_data } =
+  testimonial_content;
 
 // slider a
 const slider_a = {
@@ -177,42 +173,40 @@ const slider_b = {
   ],
 };
 
-
-const TestimonialAreaHomeOne = ({ style }: any) => { 
-
-  const bg_img = style ? null : "/assets/img/bg/distort-bg.png"
+const TestimonialAreaHomeOne = ({ style }: any) => {
+  const bg_img = style ? null : "/assets/img/bg/distort-bg.png";
 
   useEffect(() => {
-    let testi_Line_1 = document.querySelectorAll('.tp-testimonial-user-border');
+    let testi_Line_1 = document.querySelectorAll(".tp-testimonial-user-border");
 
     testi_Line_1.forEach((line, index) => {
       gsap.set(line, {
-        width: 0
+        width: 0,
       });
       gsap.to(line, {
         scrollTrigger: {
-          trigger: '.tp-testimonial-user-border',
-          start: 'top 90%',
+          trigger: ".tp-testimonial-user-border",
+          start: "top 90%",
           end: "bottom 80%",
           markers: false,
         },
-        width: "100%"
+        width: "100%",
       });
     });
-
-  })
-
+  });
 
   const [slider1, setSlider1] = useState<Slider | null>(null);
   const [slider2, setSlider2] = useState<Slider | null>(null);
   const sliderRef = useRef<Slider | null>(null);
 
-
   return (
     <>
-      <section style={{ backgroundImage: `url(${bg_img})` }} className={`tp-testimonial-area ${style ? 'sv-inner__customize pb-160 black-bg-3' : 'theme-bg tp-bg-light pb-80'} pt-25`}>
+      <section
+        style={{ backgroundImage: `url(${bg_img})` }}
+        className={`tp-testimonial-area ${style ? "sv-inner__customize pb-160 black-bg-3" : "theme-bg tp-bg-light pb-80"} pt-105`}
+      >
         <div className="container">
-          {style ? null :
+          {style ? null : (
             <div className="row">
               <div className="col-xl-12">
                 <div className="tp-testimonial-section-title">
@@ -226,12 +220,11 @@ const TestimonialAreaHomeOne = ({ style }: any) => {
                 </div>
               </div>
             </div>
-          }
+          )}
 
           <div className="row">
             <div className="col-xl-12">
               <div className="tp-testimonial-slider ml-70 mr-70">
-
                 <Slider
                   {...slider_a}
                   asNavFor={slider2 as Slider}
@@ -243,19 +236,20 @@ const TestimonialAreaHomeOne = ({ style }: any) => {
                 >
                   {testimonial_slider_data.map((item, i) => (
                     <div key={i} className="swiper-slide">
-                      <div className="tp-testimonial-item theme-bg-2"
-                        style={{ backgroundImage: 'url(/assets/img/testimonial/bg-distort.png)' }}>
+                      <div
+                        className="tp-testimonial-item theme-bg-2"
+                        style={{
+                          backgroundImage:
+                            "url(/assets/img/testimonial/bg-distort.png)",
+                        }}
+                      >
                         <div className="tp-testimonial-quote">
                           <Image src={quote} alt="image-here" />
                         </div>
                         <div className="tp-testimonial-item-top d-flex align-items-center">
-
                           <div className="tp-testimonial-rating">
-                            <StartIcon />{' '}
-                            <StartIcon />{' '}
-                            <StartIcon />{' '}
-                            <StartIcon />{' '}
-                            <StartIcon />{' '}
+                            <StartIcon /> <StartIcon /> <StartIcon />{" "}
+                            <StartIcon /> <StartIcon />{" "}
                           </div>
 
                           <p>{item.rating_text}</p>
@@ -268,36 +262,35 @@ const TestimonialAreaHomeOne = ({ style }: any) => {
                   ))}
                 </Slider>
 
-
-
                 <div className="tp-testimonial-thumb-slider">
-
                   <Slider
                     {...slider_b}
                     asNavFor={slider1 as Slider}
-                    ref={slider => {
+                    ref={(slider) => {
                       setSlider2(slider);
                     }}
                     className="tp-testimonial-nav swiper-container"
                   >
                     {testimonial_nav_data.map((item, index) => (
                       <div key={index} className="swiper-slide">
-                        <div
-                          className="tp-testimonial-user-item d-flex justify-content-center align-items-center">
+                        <div className="tp-testimonial-user-item d-flex justify-content-center align-items-center">
                           <div className="tp-testimonial-user-thumb">
                             <Image src={item.img} alt="image-here" />
                           </div>
                           <div className="tp-testimonial-user-content">
-                            <h3 className="tp-testimonial-user-title">{item.name}</h3>
-                            <span className="tp-testimonial-user-designation">{item.designation}
-                              <a href="#"> {item.company}</a></span>
+                            <h3 className="tp-testimonial-user-title">
+                              {item.name}
+                            </h3>
+                            <span className="tp-testimonial-user-designation">
+                              {item.designation}
+                              <a href="#"> {item.company}</a>
+                            </span>
                           </div>
                           <span className="tp-testimonial-user-border"></span>
                         </div>
                       </div>
                     ))}
                   </Slider>
-
                 </div>
               </div>
             </div>

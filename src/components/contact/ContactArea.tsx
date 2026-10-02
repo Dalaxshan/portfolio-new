@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 
 import contact_img from "@/assets/img/contact/contact.jpg";
@@ -24,9 +24,9 @@ interface DataType {
 const contact_content: DataType = {
   subtitle: "Contact Us",
   title_1: "Let’s Talk",
-  title_2: "About your Project",
-  email: "hello@diego.com",
-  mail_text: <>Interested in working with me? Submit your <br /> project inquiry using the form below.</>,
+  title_2: "",
+  email: "ujanth1998@gmail.com",
+  mail_text: <>Interested in working with me? </>,
   categorys: [
     { id: "branding", title: "Branding" },
     { id: "web_design", title: "Web Design" },
@@ -46,24 +46,10 @@ const {
   title_2,
   email,
   mail_text,
-  categorys,
 } = contact_content
 
 
 const ContactArea = () => {
-
-
-  const [selectedCategories, setSelectedCategories] = useState<number[]>([2, 5]);
-  // Function to toggle the selection of a category
-  const toggleSelection = (id: number) => {
-    if (selectedCategories.includes(id)) {
-      setSelectedCategories(selectedCategories.filter((categoryId) => categoryId !== id));
-    } else {
-      setSelectedCategories([...selectedCategories, id]);
-    }
-  };
-
-
   return (
     <>
       <div className="contact-inner__area contact-inner__ptb p-relative black-bg-3">
@@ -103,26 +89,7 @@ const ContactArea = () => {
                 </div>
               </div>
             </div>
-            <div className="row">
-              <div className="col-xl-12">
-                <div className="contact-inner__category mb-85">
-                  <h4 className="contact-inner__category-title">I'm interested in...</h4>
-                  <div className="contact-inner__category-wrapper">
-                    {categorys.map((item, index) => (
-                      <label key={index}
-                        htmlFor={item.id}
-                        onClick={() => toggleSelection(index)}
-                        className={`contact-category-btn ${selectedCategories.includes(index) ? 'active' : ''}`}>
-                        {item.title}
-                      </label>
-                    ))}
-                    {categorys.map((item, index) => (
-                      <input key={index} type="checkbox" id={item.id} />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
+           
             <ContactForm />
           </div>
         </div>

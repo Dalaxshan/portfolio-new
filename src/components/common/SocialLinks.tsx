@@ -4,6 +4,8 @@ import HeroEmailIcon from "@/svg/home/HeroIcons/HeroEmailIcon";
 import HeroGoogleIcon from "@/svg/home/HeroIcons/HeroGoogleIcon";
 
 import type { JSX } from "react";
+import GithubIconFooter from "@/svg/home/FooterIcons/GithubIconFooter";
+import LinkedInIconFooter from "@/svg/home/FooterIcons/LinkedInIconFooter";
 
 // hero 01 social links
 interface HeroDataType {
@@ -15,18 +17,18 @@ interface HeroDataType {
 const hero_social_data: HeroDataType[] = [
   {
     id: 1,
-    link: "https://mail.google.com",
+    link: "mailto:ujanth1998@gmail.com",
     icon: <HeroEmailIcon />,
   },
   {
     id: 2,
-    link: "https://www.google.com",
-    icon: <HeroGoogleIcon />,
+    link: "https://github.com/Dalaxshan",
+    icon: <GithubIconFooter />,
   },
   {
     id: 3,
-    link: "https://www.behance.net",
-    icon: <HeroBehanceIcon />,
+    link: "https://www.linkedin.com/in/dalaxshan-makenthiran-ab1578211/",
+    icon: <LinkedInIconFooter />,
   }
 ]
 
@@ -100,7 +102,7 @@ type copy_right_text_type = {
 
 const copy_right_text: copy_right_text_type = {
   copy_right: <>
-    © {new Date().getFullYear()}  Diego, All Rights Reserved • <span>Credits</span>
+    © {new Date().getFullYear()} All Rights Reserved • <span>Dalaxshan M</span>
   </>,
   copy_rigth_2: `Themepure © ${new Date().getFullYear()}. All rights reserved.`
 }

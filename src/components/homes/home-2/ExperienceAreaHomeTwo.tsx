@@ -20,7 +20,6 @@ interface DataType {
       id: number;
       img: StaticImageData;
       name: string;
-      percent: string;
   }[];
 }
 
@@ -28,28 +27,29 @@ const expreience_content: DataType = {
   expreience_data: [
     {
       id: 1,
-      date: "Oct 2022 - Present",
-      title: "UI/UX Lead Designer",
-      company: "Amazon INC",
+      date: "Jan 2026 - Present",
+      title: "Senior Software Engineer",
+      company: "Agroventures",
     },
     {
       id: 2,
-      date: "Oct 2021- Oct 2022",
-      title: "Product Lead Designer",
-      company: "Fourmeta Agency",
+      date: "March 2026- Current",
+      title: "Senior Software Engineer",
+      company: "Neon Labz",
     },
     {
       id: 3,
-      date: "Apr 2020 - Oct 2021",
-      title: "UI/UX Designer",
-      company: "Apr 2020 - Oct 2021",
+      date: "May 2025 - Current",
+      title: "Lecturer",
+      company: "Skyup Campus",
     },
     {
       id: 4,
-      date: "Feb 2015 - Apr 2020",
-      title: "Intership Graphic Designer",
-      company: "Feb 2015 - Apr 2020",
+      date: "May 2023 - May 2025",
+      title: "Software Engineer",
+      company: "May 2023 - May 2025",
     },
+   
 
   ],
   skill_data: [
@@ -57,31 +57,26 @@ const expreience_content: DataType = {
       id: 1,
       img: skill_icon_1,
       name: "Figma",
-      percent: "94%",
     },
     {
       id: 2,
       img: skill_icon_2,
       name: "Photoshop",
-      percent: "98%",
     },
     {
       id: 3,
       img: skill_icon_3,
       name: "Adobe XD",
-      percent: "82%",
     },
     {
       id: 4,
       img: skill_icon_4,
       name: "Sketch",
-      percent: "93%",
     },
     {
       id: 5,
       img: skill_icon_5,
       name: "Invision",
-      percent: "76%",
     }
   ]
 }
@@ -109,7 +104,7 @@ const ExperienceAreaHomeTwo = () => {
                   <div className="tp-hero-2__design-exp-top-title">
                     <span>
                       <Image className="tp-zoom-in-out" src={start_icon} alt="image-here" />
-                      DESIGN EXPERIENCE</span>
+                      WORK EXPERIENCE</span>
                   </div>
                   <ul>
 
@@ -134,7 +129,7 @@ const ExperienceAreaHomeTwo = () => {
                   <div className="tp-hero-2__design-exp-top-title mb-30">
                     <span>
                       <Image className="tp-zoom-in-out" src={start_icon} alt="image-here" />
-                      Skills</span>
+                   </span>
                   </div>
                   <div className="row row-cols-xl-5 row-cols-md-3">
 
@@ -146,7 +141,6 @@ const ExperienceAreaHomeTwo = () => {
                             <Image src={skill_item.img} alt="image-here" />
                           </div>
                           <div className="tp-hero-2__design-exp-skill-info">
-                            <span>{skill_item.percent}</span>
                             <i>{skill_item.name}</i>
                           </div>
                         </div>

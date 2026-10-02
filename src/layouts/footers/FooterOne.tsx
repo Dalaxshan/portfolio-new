@@ -1,11 +1,10 @@
-'use client';
-import React, { type JSX } from 'react';
-import { CopyRight } from '@/components/common/SocialLinks';
-import BehanceIconFooter from '@/svg/home/FooterIcons/BehanceIconFooter';
-import GoogleIconFooter from '@/svg/home/FooterIcons/GoogleIconFooter';
-import InstagramIconFooter from '@/svg/home/FooterIcons/InstagramIconFooter';
-import Link from 'next/link';
-
+"use client";
+import React, { type JSX } from "react";
+import { CopyRight } from "@/components/common/SocialLinks";
+import InstagramIconFooter from "@/svg/home/FooterIcons/InstagramIconFooter";
+import Link from "next/link";
+import LinkedInIconFooter from "@/svg/home/FooterIcons/LinkedInIconFooter";
+import FacebookIconFooter from "@/svg/home/FooterIcons/FacebookIconFooter";
 
 interface DataType {
   title: string;
@@ -17,54 +16,58 @@ interface DataType {
     name: string;
     user_name: string;
     icon: React.JSX.Element;
+    url?: string;
   }[];
 }
 
 const footer_content: DataType = {
   title: "Let's talk about the next big thing",
-  title_2: <>Let's talk about <br /> the next big thing</>,
-  btn_text_1: 'Write a Message',
-  btn_text_2: 'Discuss Project',
+  title_2: (
+    <>
+      Let's talk!
+    </>
+  ),
+  btn_text_1: "Send Mail",
+  btn_text_2: "Discuss Project",
   footer_data: [
     {
       id: 1,
-      name: "Behance",
-      user_name: "@diego_des",
-      icon: <BehanceIconFooter />,
+      name: "LinkedIn",
+      user_name: "@Dalaxshan Makenthiran",
+      icon: <LinkedInIconFooter />,
+      url: "https://www.linkedin.com/in/dalaxshan-makenthiran-ab1578211/",
     },
     {
       id: 2,
-      name: "Google",
-      user_name: "@diego_des",
-      icon: <GoogleIconFooter />,
+      name: "Facebook",
+      user_name: "@Dalaxshan Makenthiran",
+      icon: <FacebookIconFooter />,
+      url: "https://www.facebook.com/makenthiran.dalaxshan",
     },
     {
       id: 3,
       name: "Instagram",
-      user_name: "@diego_des",
+      user_name: "@Dalaxshan Makenthiran",
       icon: <InstagramIconFooter />,
+      url: "https://www.instagram.com/makenthiran_ujanth/",
     },
-  ]
-}
+  ],
+};
 
-const { btn_text_1, btn_text_2, title_2, footer_data } = footer_content
-
-
-
-
+const { btn_text_1, btn_text_2, title_2, footer_data } = footer_content;
 
 const FooterOne = ({ style }: any) => {
-  const bg_img = style ? "/assets/img/footer/overly-bg-2.png" : "/assets/img/skill/bg-distort.png";
-
-
-
-
+  const bg_img = style
+    ? "/assets/img/footer/overly-bg-2.png"
+    : "/assets/img/skill/bg-distort.png";
 
   return (
     <>
       <footer>
-        <div className={`tp-footer-bg ${style ? "tp-footer__customize  black-bg-3" : "tp-footer-bg-light theme-bg-2"} p-relative fix z-index-1`}
-          style={{ backgroundImage: `url(${bg_img})` }}>
+        <div
+          className={`tp-footer-bg ${style ? "tp-footer__customize  black-bg-3" : "tp-footer-bg-light theme-bg-2"} p-relative fix z-index-1`}
+          style={{ backgroundImage: `url(${bg_img})` }}
+        >
           <div className="tp-footer-circle-1">
             <span></span>
           </div>
@@ -74,16 +77,22 @@ const FooterOne = ({ style }: any) => {
           <div className="tp-footer-circle-3" data-speed=".7">
             <span></span>
           </div>
-          <div className={`tp-footer-area ${style ? "tp-footer-inner__customize" : ""} pb-80 pt-120`}>
+          <div
+            className={`tp-footer-area ${style ? "tp-footer-inner__customize" : ""} pb-80 pt-120`}
+          >
             <div className="container">
               <div className="row">
                 <div className="col-xl-12">
                   <div className="tp-footer-content text-center">
-                    <h3 className={`tp-footer-title ${style ? "" : "big"} tp_title_anim`}>{title_2}</h3>
+                    <h3
+                      className={`tp-footer-title ${style ? "" : "big"} tp_title_anim`}
+                    >
+                      {title_2}
+                    </h3>
                   </div>
                 </div>
               </div>
-              {style ?
+              {style ? (
                 <div className="tp-footer-btn-box">
                   <div className="row">
                     <div className="col-xl-6 col-lg-6 col-md-6">
@@ -97,7 +106,11 @@ const FooterOne = ({ style }: any) => {
                     </div>
                     <div className="col-xl-6 col-lg-6 col-md-6">
                       <div className="tp-footer-btn text-center">
-                        <a className="tp-btn-grey-xl w-100" target="_blank" href="mailto:WriteaMessage">
+                        <a
+                          className="tp-btn-grey-xl w-100"
+                          target="_blank"
+                          href="mailto:WriteaMessage"
+                        >
                           <div>
                             <span>Write a Message</span>
                           </div>
@@ -106,12 +119,15 @@ const FooterOne = ({ style }: any) => {
                     </div>
                   </div>
                 </div>
-                :
+              ) : (
                 <div className="tp-footer-btn-box">
                   <div className="row">
                     <div className="col-xl-6 col-lg-6 col-md-6">
                       <div className="tp-footer-btn text-center ">
-                        <a className="tp-btn-green w-100" href="mailto:WriteaMessage">
+                        <a
+                          className="tp-btn-green w-100"
+                          href="mailto:ujanth1998@gmail.com"
+                        >
                           <div>
                             <span>{btn_text_1}</span>
                           </div>
@@ -129,12 +145,16 @@ const FooterOne = ({ style }: any) => {
                     </div>
                   </div>
                 </div>
-              }
+              )}
 
               <div className="row gx-50">
                 {footer_data.map((item, index) => (
-                  <div key={index} className="col-xl-4 col-lg-4 col-md-6" style={{ marginBottom: "30px" }}>
-                    <a href="#">
+                  <div
+                    key={index}
+                    className="col-xl-4 col-lg-4 col-md-6"
+                    style={{ marginBottom: "30px" }}
+                  >
+                    <a href={item.url} target="_blank" rel="noopener noreferrer">
                       <div className="tp-footer-social-item d-flex align-items-center justify-content-between">
                         <span className="tp-footer-anim-border"></span>
                         <div className="tp-footer-social-text z-index-1">
@@ -142,9 +162,7 @@ const FooterOne = ({ style }: any) => {
                           <span className="child-2">{item.user_name}</span>
                         </div>
                         <div className="tp-footer-social-icon z-index-1">
-                          <span>
-                            {item.icon}
-                          </span>
+                          <span>{item.icon}</span>
                         </div>
                       </div>
                     </a>
@@ -159,7 +177,9 @@ const FooterOne = ({ style }: any) => {
               <div className="row">
                 <div className="col-xl-6 col-md-6">
                   <div className="tp-copyright-content-left text-center text-md-start">
-                    <p><CopyRight /></p>
+                    <p>
+                      <CopyRight />
+                    </p>
                   </div>
                 </div>
                 <div className="col-xl-6 col-md-6">

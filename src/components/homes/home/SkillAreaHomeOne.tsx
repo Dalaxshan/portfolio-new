@@ -1,19 +1,19 @@
 'use client'
 import React, { useEffect } from 'react';
 // skill images
-import skill_img_1 from "@/assets/img/skill/angular.png";
-import skill_img_2 from "@/assets/img/skill/wp.png";
-import skill_img_3 from "@/assets/img/skill/nodejs.png";
-import skill_img_4 from "@/assets/img/skill/html.png";
-import skill_img_5 from "@/assets/img/skill/webflow.png";
-import skill_img_6 from "@/assets/img/skill/vue.png";
+import skill_img_1 from "@/assets/img/skill/ico13.png";
+import skill_img_2 from "@/assets/img/skill/ico12.png";
+import skill_img_3 from "@/assets/img/skill/ico6.png";
+import skill_img_4 from "@/assets/img/skill/ico11.png";
+import skill_img_5 from "@/assets/img/skill/ico10.png";
+import skill_img_6 from "@/assets/img/skill/ico5.png";
 
-import skill_img_7 from "@/assets/img/skill/figma.png";
-import skill_img_8 from "@/assets/img/skill/sketch.png";
-import skill_img_9 from "@/assets/img/skill/photoshop.png";
-import skill_img_10 from "@/assets/img/skill/xd.png";
-import skill_img_11 from "@/assets/img/skill/in.png";
-import skill_img_12 from "@/assets/img/skill/ai.png";
+import skill_img_7 from "@/assets/img/skill/ico4.png";
+import skill_img_8 from "@/assets/img/skill/ico8.png";
+import skill_img_9 from "@/assets/img/skill/ico9.png";
+import skill_img_10 from "@/assets/img/skill/ico3.png";
+import skill_img_11 from "@/assets/img/skill/ico2.png";
+import skill_img_12 from "@/assets/img/skill/ico1.png";
 import Image, { StaticImageData } from 'next/image';
 
 
@@ -26,82 +26,69 @@ interface DataType {
     items: {
       img: StaticImageData;
       title: string;
-      percent: number;
     }[];
   }[];
 }
 const skill_content: DataType = {
-  subtitle: "Advantage",
-  title: "Skills & tools",
+  subtitle: "Familiar",
+  title: "Programming & Tech Skills",
   info: "For those who know what they're looking for..",
   skill_data: [
     {
-      tab_id: "tech",
+      tab_id: "Stacks",
       items: [
         {
           img: skill_img_1,
-          title: "Angular",
-          percent: 85
+          title: "Nest Js",
         },
         {
           img: skill_img_2,
-          title: "WordPress",
-          percent: 95
+          title: "Next Js",
         },
         {
           img: skill_img_3,
-          title: "NodeJS",
-          percent: 60
+          title: "React Js",
         },
         {
           img: skill_img_4,
-          title: "HTML",
-          percent: 97
+          title: "Prisma ORM",
         },
         {
           img: skill_img_5,
-          title: "Webflow",
-          percent: 80,
+          title: "Svelte",
         },
         {
           img: skill_img_6,
-          title: "Vue",
-          percent: 90
+          title: "Python",
         }
       ],
     },
     {
-      tab_id: "design",
+      tab_id: "Tools",
       items: [
         {
           img: skill_img_7,
-          title: "Figma",
-          percent: 95,
+          title: "Wordpress",
         },
         {
           img: skill_img_8,
-          title: "Sketch",
-          percent: 82
+          title: "AWS",
         },
         {
           img: skill_img_9,
-          title: "Photoshop",
-          percent: 98
+          title: "MongoDB",
         },
         {
           img: skill_img_10,
-          title: "Adobe XD",
-          percent: 85
+          title: "Vercel",
         },
         {
           img: skill_img_11,
-          title: "InVision",
-          percent: 90
+          title: "Netlify",
         },
         {
           img: skill_img_12,
-          title: "Illustrator",
-          percent: 80
+          title: "Cloudflare",
         }
 
       ],
@@ -231,11 +218,9 @@ const SkillAreaHomeOne = () => {
                                     <Image src={inner_item.img} alt="image-here" />
                                   </span>
                                 </div>
-                                <h3 className="tp-skill-count"><span>{inner_item.percent}</span>%</h3>
+                               <h3 className="tp-skill-title">{inner_item.title}</h3>
                               </div>
-                              <div className="tp-skill-content">
-                                <h3 className="tp-skill-title">{inner_item.title}</h3>
-                              </div>
+                             
                             </div>
                           </div>
                         )}
