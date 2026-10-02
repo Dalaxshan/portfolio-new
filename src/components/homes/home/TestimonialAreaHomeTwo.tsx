@@ -1,14 +1,12 @@
-'use client';
-import Link from 'next/link';
-import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
-import testimonial_data from '@/data/TestimonialData';
+"use client";
+import Link from "next/link";
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import testimonial_data from "@/data/TestimonialData";
 
 import shape1 from "@/assets/img/portfolio/shape-3.png";
 
-
 const TestimonialAreaHomeTwo = () => {
-
   const hoverTextRefs: React.RefObject<HTMLDivElement | null>[] | any = [];
   const moveText = (e: React.MouseEvent<HTMLDivElement>, index: number) => {
     const hoverTextRef = hoverTextRefs[index];
@@ -16,23 +14,35 @@ const TestimonialAreaHomeTwo = () => {
     if (hoverTextRef.current) {
       const item = hoverTextRef.current.getBoundingClientRect();
       const x = e.clientX - item.left; // Use item.left, not item.x
-      const y = e.clientY - item.top;  // Use item.top, not item.y
+      const y = e.clientY - item.top; // Use item.top, not item.y
 
       const children = hoverTextRef.current.children;
       if (children[0] && children[0].children[2]) {
-        (children[0].children[2] as HTMLElement).style.transform = `translate(${x}px, ${y}px)`;
+        (children[0].children[2] as HTMLElement).style.transform =
+          `translate(${x}px, ${y}px)`;
       }
     }
   };
 
-  // 3d slider 
+  // 3d slider
   const [activeIndex, setActiveIndex] = useState<number>(2);
 
+  const handleArrowClick = (direction: "left" | "right") => {
+    setActiveIndex((currentIndex) => {
+      const nextIndex =
+        direction === "left" ? currentIndex - 1 : currentIndex + 1;
+
+      return nextIndex >= 0 && nextIndex < testimonial_data.length
+        ? nextIndex
+        : currentIndex;
+    });
+  };
+
   useEffect(() => {
-    const tp3dSlideWrapper = document.getElementById('tp-3d-slide-wrapper');
+    const tp3dSlideWrapper = document.getElementById("tp-3d-slide-wrapper");
     if (!tp3dSlideWrapper) return;
 
-    const dir = document.documentElement.getAttribute('dir');
+    const dir = document.documentElement.getAttribute("dir");
     let startX = 0;
     let endX = 0;
 
@@ -50,7 +60,7 @@ const TestimonialAreaHomeTwo = () => {
       const sensitivity = 50; // Adjust this value based on your desired sensitivity
 
       if (Math.abs(deltaX) > sensitivity) {
-        if ((dir === 'rtl' && deltaX < 0) || (dir !== 'rtl' && deltaX > 0)) {
+        if ((dir === "rtl" && deltaX < 0) || (dir !== "rtl" && deltaX > 0)) {
           setActiveIndex((prev) => prev + 1);
         } else {
           setActiveIndex((prev) => prev - 1);
@@ -58,17 +68,10 @@ const TestimonialAreaHomeTwo = () => {
       }
     };
 
-    tp3dSlideWrapper.addEventListener('touchstart', handleTouchStart);
-    tp3dSlideWrapper.addEventListener('touchend', handleTouchEnd);
+    tp3dSlideWrapper.addEventListener("touchstart", handleTouchStart);
+    tp3dSlideWrapper.addEventListener("touchend", handleTouchEnd);
 
-    const numberOfSlides = document.querySelectorAll('.tp-3d-slide').length;
-
-    const handleArrowClick = (direction: 'left' | 'right') => {
-      const nextIndex = direction === 'left' ? activeIndex - 1 : activeIndex + 1;
-      if (nextIndex >= 0 && nextIndex < numberOfSlides) {
-        setActiveIndex(nextIndex);
-      }
-    };
+    const numberOfSlides = document.querySelectorAll(".tp-3d-slide").length;
 
     const handleDotClick = (index: number) => {
       if (index >= 0 && index < numberOfSlides) {
@@ -77,62 +80,44 @@ const TestimonialAreaHomeTwo = () => {
     };
 
     const updateSlides = () => {
-      const slides = document.querySelectorAll('.tp-3d-slide');
+      const slides = document.querySelectorAll(".tp-3d-slide");
 
       slides.forEach((slide, index) => {
-        const classes = ['prev-1', 'prev-2', 'active', 'next-1', 'next-2'];
+        const classes = ["prev-1", "prev-2", "active", "next-1", "next-2"];
         slide.classList.remove(...classes);
 
         if (index === activeIndex) {
-          slide.classList.add('active');
+          slide.classList.add("active");
         } else if (index === activeIndex - 1) {
-          slide.classList.add('prev-1');
+          slide.classList.add("prev-1");
         } else if (index === activeIndex - 2) {
-          slide.classList.add('prev-2');
+          slide.classList.add("prev-2");
         } else if (index === activeIndex + 1) {
-          slide.classList.add('next-1');
+          slide.classList.add("next-1");
         } else if (index === activeIndex + 2) {
-          slide.classList.add('next-2');
+          slide.classList.add("next-2");
         }
       });
-    };
-
-    const handleArrowClickWrapper = (event: React.MouseEvent<HTMLDivElement>) => {
-      const direction = event.currentTarget.classList.contains('tp-3d-slide-arrow-left') ? 'left' : 'right';
-      handleArrowClick(direction as 'left' | 'right');
     };
 
     const handleDotClickWrapper = (index: number) => {
       handleDotClick(index);
     };
 
-    document.querySelectorAll('.tp-3d-slide-arrow-right, .tp-3d-slide-arrow-left').forEach((arrow) => {
-      (arrow as HTMLDivElement).addEventListener('click', handleArrowClickWrapper as any);
-    });
-
-
-
-
-    document.querySelectorAll('.dots span').forEach((dot, index) => {
-      dot.addEventListener('click', () => handleDotClickWrapper(index));
+    document.querySelectorAll(".dots span").forEach((dot, index) => {
+      dot.addEventListener("click", () => handleDotClickWrapper(index));
     });
 
     updateSlides();
 
     return () => {
-      tp3dSlideWrapper.removeEventListener('touchstart', handleTouchStart);
-      tp3dSlideWrapper.removeEventListener('touchend', handleTouchEnd);
-      document.querySelectorAll('.tp-3d-slide-arrow-right, .tp-3d-slide-arrow-left').forEach((arrow) => {
-        (arrow as HTMLDivElement).removeEventListener('click', handleArrowClickWrapper as any);
-      });
-      document.querySelectorAll('.dots span').forEach((dot, index) => {
-        dot.removeEventListener('click', () => handleDotClickWrapper(index));
+      tp3dSlideWrapper.removeEventListener("touchstart", handleTouchStart);
+      tp3dSlideWrapper.removeEventListener("touchend", handleTouchEnd);
+      document.querySelectorAll(".dots span").forEach((dot, index) => {
+        dot.removeEventListener("click", () => handleDotClickWrapper(index));
       });
     };
   }, [activeIndex]);
-
-
-
 
   return (
     <>
@@ -142,65 +127,115 @@ const TestimonialAreaHomeTwo = () => {
             <span></span>
           </div>
           <div className="tp-portfolio-shape">
-            <Image className="tp-portfolio-shape-2-1 tp-zoom-in-out" src={shape1} alt="image-here" />
+            <Image
+              className="tp-portfolio-shape-2-1 tp-zoom-in-out"
+              src={shape1}
+              alt="image-here"
+            />
           </div>
           <div className="container">
             <div className="row">
               <div className="col-xl-12">
                 <div className="tp-3d-slide-container">
-
-                  <span className="tp-3d-slide-arrow tp-3d-slide-arrow-left z-index-9">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="M15 8H1" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
-                        strokeLinejoin="round" />
-                      <path d="M8 1L1 8L8 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
-                        strokeLinejoin="round" />
+                  <span
+                    className="tp-3d-slide-arrow tp-3d-slide-arrow-left z-index-9"
+                    onClick={() => handleArrowClick("left")}
+                    role="button"
+                    tabIndex={0}
+                    aria-label="Previous project"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M15 8H1"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M8 1L1 8L8 15"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </span>
 
-                  <span className="tp-3d-slide-arrow tp-3d-slide-arrow-right z-index-9">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 8H15" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
-                        strokeLinejoin="round" />
-                      <path d="M8 1L15 8L8 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
-                        strokeLinejoin="round" />
+                  <span
+                    className="tp-3d-slide-arrow tp-3d-slide-arrow-right z-index-9"
+                    onClick={() => handleArrowClick("right")}
+                    role="button"
+                    tabIndex={0}
+                    aria-label="Next project"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1 8H15"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M8 1L15 8L8 15"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
                     </svg>
                   </span>
 
                   <div className="tp-3d-slide-wrapper" id="tp-3d-slide-wrapper">
                     {testimonial_data.map((item, index) => (
-                      <div key={index} className="tp-3d-slide tp-hover-reveal-text"
+                      <div
+                        key={index}
+                        className="tp-3d-slide tp-hover-reveal-text"
                         ref={(element) => {
                           hoverTextRefs[index] = React.createRef();
                           hoverTextRefs[index].current = element;
                         }}
-                        onMouseMove={(e) => moveText(e, index)}>
-                        <Link href={item.site_url} className="tp-portfolio-item-2 include-bg"
+                        onMouseMove={(e) => moveText(e, index)}
+                      >
+                        <Link
+                          href={item.site_url}
+                          className="tp-portfolio-item-2 include-bg"
                           style={{
                             backgroundImage: `url(${item.brand_img.src})`,
                           }}
-                        target='blank'
+                          target="blank"
                         >
                           <div className="tp-portfolio-meta-2">
                             <span>{item.brand_tag}</span>
                             <span>{item.brand_tag2}</span>
                             <span>{item.brand_tag3}</span>
-                            
                           </div>
-                          <h3 className="tp-portfolio-title-2">{item.brand_name}</h3>
-                         
+                          <h3 className="tp-portfolio-title-2">
+                            {item.brand_name}
+                          </h3>
+
                           <div className="tp-portfolio-view tp-portfolio-view-btn">
-                            <span>View <br /> Website</span>
+                            <span>
+                              View <br /> Website
+                            </span>
                           </div>
-                          
-                          
                         </Link>
                       </div>
                     ))}
                   </div>
-
                 </div>
               </div>
             </div>

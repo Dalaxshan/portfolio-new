@@ -61,7 +61,7 @@ const HeaderOne = () => {
           <span className="tp-header-border"></span>
           <div className="container container-large">
             <div className="row align-items-center">
-              <div className="col-xl-3 col-lg-2 col-md-5 col-6">
+              <div className="col-xl-2 col-lg-2 col-md-5 col-6">
                 <div className="logo">
                   <Link className="logo-white" href="/">
                     <Image style={{ width: '215px', height: 'auto' }} src={light_logo} alt="logo" />
@@ -71,7 +71,7 @@ const HeaderOne = () => {
                   </Link>
                 </div>
               </div>
-              <div className="col-xl-7 col-lg-7 d-none d-lg-block">
+              <div className="col-xl-8 col-lg-7 d-none d-lg-block">
                 <div className="main-menu">
                   <nav className="tp-main-menu-content">
                     <NavMenu />
