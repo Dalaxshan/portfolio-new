@@ -173,14 +173,14 @@ const HeaderOne = () => {
                 </div>
 
               </div>
-              <div className="col-xl-6 col-lg-7 d-none d-lg-block">
+              <div className="col-xl-8 col-lg-7 d-none d-lg-block">
                 <div className="main-menu">
                   <nav className="tp-main-menu-content">
                     <NavMenu />
                   </nav>
                 </div>
               </div>
-              <div className="col-xl-4 col-lg-3 col-md-7 col-6">
+              <div className="col-xl-2 col-lg-3 col-md-7 col-6">
                 <div className="tp-header-right d-flex align-items-center justify-content-end">
                   <div className="tp-theme-toggle ">
                     <label
