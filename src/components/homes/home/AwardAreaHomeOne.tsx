@@ -67,6 +67,7 @@ const AwardAreaHomeOne = ({ style_2 }: { style_2?: boolean }) => {
   return (
     <>
       <section
+        id="certificates"
         style={{ backgroundImage: `url(${bg_img})` }}
         className={`tp-award-area pt-120 ${style_2 ? "tp-award-customize black-bg-3 pb-50" : "theme-bg pb-120 tp-bg-light p-relative"}`}
       >

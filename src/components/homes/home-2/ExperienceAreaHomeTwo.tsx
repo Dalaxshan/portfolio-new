@@ -86,7 +86,7 @@ const { expreience_data, skill_data } = expreience_content
 const ExperienceAreaHomeTwo = () => {
   return (
     <>
-      <div className="section">
+      <div className="section" id="experience">
         <div className="tp-hero-2__bg black-bg-3 tp-hero-2__space-5 d-flex align-items-start justify-content-center z-index-1 p-relative fix">
           <div className="tp-hero-distort-2" style={{ backgroundImage: 'url(/assets/img/hero/hero-2-overlay.png)' }}></div>
           <div className="tp-hero-2__boder-circle tp-hero-2__boder-circle-tr">

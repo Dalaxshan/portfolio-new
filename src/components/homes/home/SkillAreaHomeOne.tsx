@@ -162,7 +162,7 @@ const SkillAreaHomeOne = () => {
 
   return (
     <>
-      <section className="tp-skill-area pt-115 pb-105 p-relative z-index-1 fix theme-bg-2" style={{ backgroundImage: 'url(/assets/img/skill/bg-distort.png)' }}>
+      <section id="technical-skills" className="tp-skill-area pt-115 pb-105 p-relative z-index-1 fix theme-bg-2" style={{ backgroundImage: 'url(/assets/img/skill/bg-distort.png)' }}>
         <div className="tp-skill-shape">
           <span className="tp-skill-shape-1"></span>
           <span className="tp-skill-shape-2"></span>

@@ -100,7 +100,7 @@ const ServiceAreaHomeOne = () => {
     <>
       <section
         className="tp-services-area tp-sv tp-services-bg-text-animation fix"
-        id="tp-sv"
+        id="services"
       >
         <div className="container container-large">
           <div className="tp-services-inner pb-195 p-relative z-index-1">

@@ -55,7 +55,7 @@ const { subtitle, award_title, award_des, about_des, counter_data } =
 const AboutAreaHomeOne = () => {
   return (
     <>
-      <section className="tp-about-area fix">
+      <section id="about" className="tp-about-area fix">
         <div className="container container-large">
           <div
             className="tp-about-inner pt-145 pb-80"

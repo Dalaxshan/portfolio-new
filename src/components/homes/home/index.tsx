@@ -28,18 +28,13 @@ const HomeOne = () => {
         <div id="smooth-content">
           <main>
             <HeroAreaHome />
-            {/* <BrandAreaHomeOne /> */}
-
             <MarqueeAreaHomeOne />
             <AboutAreaHomeOne />
             <ServiceAreaHomeOne />
             <ExperienceAreaHomeTwo />
             <TestimonialAreaHomeTwo />
             <AwardAreaHomeOne style_2={false} />
-            {/* <PortfolioAreaHomeOne /> */}
-            <SkillAreaHomeOne />
-            {/* <TestimonialAreaHomeOne /> */}
-            {/* <PriceAreaHomeOne /> */}
+            <SkillAreaHomeOne />      
           </main>
           <FooterOne />
         </div>
