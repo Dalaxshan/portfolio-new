@@ -26,8 +26,6 @@ const ContactForm = () => {
   const [isFocused2, setIsFocused2] = useState<boolean>(false);
   const [isFocused3, setIsFocused3] = useState<boolean>(false);
   const [isFocused4, setIsFocused4] = useState<boolean>(false);
-  const [activeCategory, setActiveCategory] = useState<number | null>(1);
-
 
   const { register, handleSubmit, reset, formState: { errors }, } = useForm<FormData>({ resolver: yupResolver(schema), });
   const onSubmit = (data: FormData) => {
@@ -42,8 +40,6 @@ const ContactForm = () => {
     console.log(data);
   };
 
-
-  // handle focus and blur events 
 
   const handleFocus = () => {
     setIsFocused(true);
@@ -78,13 +74,6 @@ const ContactForm = () => {
       setIsFocused4(false);
     }
   };
-
-  const handleItemClick = (index: number) => {
-    setActiveCategory(index);
-  };
-
-
-
 
   return (
     <>

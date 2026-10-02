@@ -4,13 +4,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import NavMenu from './menu/NavMenu';
 import React, { useEffect, useState } from 'react';
-import Offcanvas2 from '@/components/common/Offcanvas2';
 import light_logo from "@/assets/img/logo/logo.png";
 import dark_logo from "@/assets/img/logo/logo-black.png";
 import UseThemeCheck from '@/hooks/UseThemeCheck';
 
 const HeaderOne = () => {
-  const [showCanvas, setShowCanvas] = useState<boolean>(false);
   const {active,toggleTheme} = UseThemeCheck();
 
   // header border bottom animation
@@ -63,17 +61,17 @@ const HeaderOne = () => {
           <span className="tp-header-border"></span>
           <div className="container container-large">
             <div className="row align-items-center">
-              <div className="col-xl-2 col-lg-2 col-md-5 col-6">
+              <div className="col-xl-3 col-lg-2 col-md-5 col-6">
                 <div className="logo">
                   <Link className="logo-white" href="/">
-                    <Image style={{ width: '115px', height: 'auto' }} src={light_logo} alt="diego-image" />
+                    <Image style={{ width: '215px', height: 'auto' }} src={light_logo} alt="logo" />
                   </Link>
                   <Link className="logo-black" href="/">
-                    <Image style={{ width: '115px', height: 'auto' }} src={dark_logo} alt="diego-image" />
+                    <Image style={{ width: '215px', height: 'auto' }} src={dark_logo} alt="diego-image" />
                   </Link>
                 </div>
               </div>
-              <div className="col-xl-8 col-lg-7 d-none d-lg-block">
+              <div className="col-xl-7 col-lg-7 d-none d-lg-block">
                 <div className="main-menu">
                   <nav className="tp-main-menu-content">
                     <NavMenu />
@@ -140,13 +138,7 @@ const HeaderOne = () => {
                       </svg>
                     </a>
                   </div>
-                  <div className="tp-header-hamburger ml-20">
-                    <button className="tp-hamburger-btn tp-hamburger-btn-white tp-menu-bar tp-offcanvas-open-btn-2"
-                      onClick={() => setShowCanvas(true)}
-                      type="button">
-                      <span></span>
-                    </button>
-                  </div>
+               
                 </div>
               </div>
 
@@ -165,10 +157,10 @@ const HeaderOne = () => {
 
                 <div className="logo">
                   <Link className="logo-white" href="/">
-                    <Image style={{ width: '115px', height: 'auto' }} src={light_logo} alt="diego-image" />
+                    <Image style={{ width: '215px', height: 'auto' }} src={light_logo} alt="diego-image" />
                   </Link>
                   <Link className="logo-black" href="/">
-                    <Image style={{ width: '115px', height: 'auto' }} src={dark_logo} alt="diego-image" />
+                    <Image style={{ width: '215px', height: 'auto' }} src={dark_logo} alt="diego-image" />
                   </Link>
                 </div>
 
@@ -240,14 +232,7 @@ const HeaderOne = () => {
                       </svg>
                     </a>
                   </div>
-                  <div className="tp-header-hamburger ml-20">
-                    <button
-                      onClick={() => setShowCanvas(true)}
-                      className="tp-hamburger-btn tp-hamburger-btn-white tp-menu-bar tp-offcanvas-open-btn-2"
-                      type="button">
-                      <span></span>
-                    </button>
-                  </div>
+            
                 </div>
               </div>
             </div>
@@ -256,7 +241,6 @@ const HeaderOne = () => {
 
       </header>
 
-      <Offcanvas2 showCanvas={showCanvas} setShowCanvas={setShowCanvas} />
 
     </>
   );

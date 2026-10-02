@@ -1,8 +1,6 @@
 'use client'
 import React from 'react';
 import Image from 'next/image';
-
-import contact_img from "@/assets/img/contact/contact.jpg";
 import contact_flower_img_1 from "@/assets/img/contact/contact-flower.png";
 import contact_flower_img_2 from "@/assets/img/contact/contact-flower-text.png";
 import ContactForm from '../forms/ContactForm';
@@ -61,7 +59,7 @@ const ContactArea = () => {
                   <div className="contact-inner__top-section-title-box mb-70">
                     <span className="contact-inner__subtitle">{subtitle}</span>
                     <h4 className="contact-inner__title tp-char-animation tp-hero-3__content">{title_1} {' '}
-                      <span><Image src={contact_img} alt="image-here" /></span> <br />
+                      
                       {title_2}
                     </h4>
                   </div>
