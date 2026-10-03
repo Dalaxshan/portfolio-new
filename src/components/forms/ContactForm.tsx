@@ -21,8 +21,6 @@ const schema = yup
   })
   .required();
 
-const WEB3FORMS_ACCESS_KEY = "ea447d54-25c0-4ca8-813b-34abe7fa5d53";
-
 const ContactForm = () => {
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [isFocused2, setIsFocused2] = useState<boolean>(false);
@@ -39,7 +37,7 @@ const ContactForm = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: WEB3FORMS_ACCESS_KEY,
+          access_key: process.env.WEB3FORMS_ACCESS_KEY,
           name: data.name,
           email: data.email,
           company: data.company,
