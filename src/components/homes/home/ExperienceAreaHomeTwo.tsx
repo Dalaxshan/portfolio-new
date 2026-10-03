@@ -1,13 +1,6 @@
-import React from 'react';
-import Image, { StaticImageData } from "next/image";
 
+import Image from "next/image";
 import start_icon from "@/assets/img/services/shape/services-shape-3.png";
-import skill_icon_1 from "@/assets/img/skill/figma-sm.png";
-import skill_icon_2 from "@/assets/img/skill/photoshop-sm.png";
-import skill_icon_3 from "@/assets/img/skill/xd-sm.png";
-import skill_icon_4 from "@/assets/img/skill/sketch-sm.png";
-import skill_icon_5 from "@/assets/img/skill/in-sm.png";
-
 
 interface DataType {
   expreience_data: {
@@ -16,11 +9,7 @@ interface DataType {
       title: string;
       company: string;
   }[];
-  skill_data: {
-      id: number;
-      img: StaticImageData;
-      name: string;
-  }[];
+
 }
 
 const expreience_content: DataType = {
@@ -52,35 +41,9 @@ const expreience_content: DataType = {
    
 
   ],
-  skill_data: [
-    {
-      id: 1,
-      img: skill_icon_1,
-      name: "Figma",
-    },
-    {
-      id: 2,
-      img: skill_icon_2,
-      name: "Photoshop",
-    },
-    {
-      id: 3,
-      img: skill_icon_3,
-      name: "Adobe XD",
-    },
-    {
-      id: 4,
-      img: skill_icon_4,
-      name: "Sketch",
-    },
-    {
-      id: 5,
-      img: skill_icon_5,
-      name: "Invision",
-    }
-  ]
+ 
 }
-const { expreience_data, skill_data } = expreience_content
+const { expreience_data} = expreience_content
 
 
 const ExperienceAreaHomeTwo = () => {
@@ -100,53 +63,28 @@ const ExperienceAreaHomeTwo = () => {
           <div className="container">
             <div className="row">
               <div className="col-xl-12">
-                <div className="tp-hero-2__design-exp-wrap">
-                  <div className="tp-hero-2__design-exp-top-title">
-                    <span>
-                      <Image className="tp-zoom-in-out" src={start_icon} alt="image-here" />
-                      WORK EXPERIENCE</span>
+                   <div className="tp-section-title-wrapper mb-40 text-start">
+                  <div className="tp-section-title-inner tp_title_anim p-relative">
+                    <span className="tp-section-subtitle">Working</span>
+                    <h3 className="tp-section-title">Experiences</h3>
                   </div>
+                </div>
+                <div className="tp-hero-2__design-exp-wrap">
                   <ul>
-
                     {expreience_data.map((item, index) => (
                       <li key={index}>
-                        <div
-                          className="tp-hero-2__design-exp-item d-flex align-items-center justify-content-between">
+                        <div className="tp-hero-2__design-exp-item d-flex align-items-center justify-content-between">
                           <div className="tp-hero-2__design-exp-meta d-flex align-items-center">
                             <span>{item.date}</span>
                             <h4 className="tp-hero-2__design-exp-title">{item.title}</h4>
                           </div>
-                          <div className="tp-hero-2__design-exp-company">
+                          <div className="tp-hero-2__design-exp-company align-items-center d-flex justify-content-center">
                             <span>{item.company}</span>
                           </div>
                         </div>
                       </li>
                     ))}
-
                   </ul>
-                </div>
-                <div className="tp-hero-2__design-exp-skill-wrap">
-                  <div className="tp-hero-2__design-exp-top-title mb-30">
-                    <span>
-                      <Image className="tp-zoom-in-out" src={start_icon} alt="image-here" />
-                   </span>
-                  </div>
-                  <div className="row row-cols-xl-5 row-cols-md-3">
-
-                    {skill_data.map((skill_item, i) => (
-                      <div key={i} className="col-xl">
-                        <div
-                          className={`mb-20 tp-hero-2__design-exp-skill-item justify-content-center bg-${skill_item.id} d-flex align-items-center`}>
-                          <div className="tp-hero-2__design-exp-skill-icon">
-                            <Image src={skill_item.img} alt="image-here" />
-                          </div>
-                          <div className="tp-hero-2__design-exp-skill-info">
-                            <i>{skill_item.name}</i>
-                          </div>
-                        </div>
-                      </div>
-                    ))} 
-                  </div>
                 </div>
               </div>
             </div>

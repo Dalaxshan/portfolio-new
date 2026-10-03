@@ -136,6 +136,13 @@ const TestimonialAreaHomeTwo = () => {
           <div className="container">
             <div className="row">
               <div className="col-xl-12">
+                <div className="tp-section-title-wrapper mb-150 text-start">
+                  <div className="tp-section-title-inner tp_title_anim p-relative">
+                    <span className="tp-section-subtitle">Project</span>
+                    <h3 className="tp-section-title">Selected work</h3>
+                  </div>
+                </div>
+
                 <div className="tp-3d-slide-container">
                   <span
                     className="tp-3d-slide-arrow tp-3d-slide-arrow-left z-index-9"

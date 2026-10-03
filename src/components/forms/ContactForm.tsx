@@ -21,23 +21,47 @@ const schema = yup
   })
   .required();
 
+const WEB3FORMS_ACCESS_KEY = "ea447d54-25c0-4ca8-813b-34abe7fa5d53";
+
 const ContactForm = () => {
   const [isFocused, setIsFocused] = useState<boolean>(false);
   const [isFocused2, setIsFocused2] = useState<boolean>(false);
   const [isFocused3, setIsFocused3] = useState<boolean>(false);
   const [isFocused4, setIsFocused4] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const { register, handleSubmit, reset, formState: { errors }, } = useForm<FormData>({ resolver: yupResolver(schema), });
-  const onSubmit = (data: FormData) => {
-    const notify = () => toast("Message send successful");
-    notify();
-    setIsFocused(false);
-    setIsFocused2(false);
-    setIsFocused3(false);
-    setIsFocused4(false); 
-    
-    reset();
-    console.log(data);
+
+  const onSubmit = async (data: FormData) => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          name: data.name,
+          email: data.email,
+          company: data.company,
+          message: data.message,
+        }),
+      });
+      const result = await response.json();
+      if (result.success) {
+        toast.success("Message sent successfully!");
+        reset();
+        setIsFocused(false);
+        setIsFocused2(false);
+        setIsFocused3(false);
+        setIsFocused4(false);
+      } else {
+        toast.error("Something went wrong. Please try again.");
+      }
+    } catch {
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
 
@@ -116,9 +140,9 @@ const ContactForm = () => {
           <div className="row">
             <div className="col-xxl-12">
               <div className="postbox__comment-btn">
-                <button type="submit" className="tp-btn-grey-lg">
+                <button type="submit" className="tp-btn-grey-lg" disabled={isSubmitting}>
                   <span>
-                    <i>Send Message</i>
+                    <i>{isSubmitting ? "Sending..." : "Send Message"}</i>
                   </span>
                 </button>
               </div>
